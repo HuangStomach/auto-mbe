@@ -1,18 +1,16 @@
 import time
 import win32api
 import win32gui
-import pyautogui
-from config import Moe
+import win32con
+import win32clipboard
+from layout.moe import Moe
+from source.DTINet import DTINet
 
-moe_win = win32gui.FindWindow(None, Moe.title)
-if moe_win == 0: win32api.ShellExecute(0, 'open', Moe.path, '', '', 1)
-while moe_win == 0:
-    time.sleep(1)
-    moe_win = win32gui.FindWindow(None, Moe.title)
-win32gui.BringWindowToTop(moe_win)
-left, top, right, bottom = win32gui.GetWindowRect(moe_win)
-moe = Moe(left, top, right, bottom)
-pyautogui.moveTo(moe.file()[0], moe.file()[1])
+moe = Moe()
+moe.launch()
 
-#time.sleep(3)
-#win32gui.SendMessage(moe, win32con.WM_CLOSE)
+dtinet = DTINet()
+for receptor in dtinet.receptor():
+    moe\
+        .import_file(dtinet.path, receptor)\
+        .ignore_water(True)
