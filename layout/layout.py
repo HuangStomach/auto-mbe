@@ -11,8 +11,11 @@ class Layout:
         for opt, arg in opts:
             if opt == '--dev' and arg == 'false': self.is_dev = False
 
-    def _move(self, x, y):
-        if not self.is_dev: win32api.SetCursorPos([x, y])
+    def _move(self, x, y = 0):
+        if isinstance (x, list):
+            if not self.is_dev: win32api.SetCursorPos(x)
+        else:
+            if not self.is_dev: win32api.SetCursorPos([x, y])
         return self
 
     def _click(self):
@@ -49,4 +52,8 @@ class Layout:
     
     def _enter(self):
         self._keybd(13)
+        return self
+
+    def _undo(self):
+        self._keybd([17, 90])
         return self
