@@ -29,10 +29,10 @@ class Layout:
 
     def _keybd(self, keys):
         if isinstance (keys, list):
-            for key in keys: win32api.keybd_event(key, 0, 0 ,0)
+            for key in keys: win32api.keybd_event(key, 0, 0, 0)
             for key in keys: win32api.keybd_event(key, 0, win32con.KEYEVENTF_KEYUP, 0)
         else:
-            win32api.keybd_event(keys, 0, 0 ,0)
+            win32api.keybd_event(keys, 0, 0, 0)
             win32api.keybd_event(keys, 0, win32con.KEYEVENTF_KEYUP, 0)
         return self
     

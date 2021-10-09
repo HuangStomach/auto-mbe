@@ -1,6 +1,6 @@
 .DS_Store
-*.pdb
-*.pdbqt
+data
+*.mdb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
