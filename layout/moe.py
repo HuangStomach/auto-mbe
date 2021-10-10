@@ -49,7 +49,6 @@ class Moe(Layout):
             if self.moe_win != 0 and win32gui.IsWindowEnabled(self.moe_win): break
         self.rect = win32gui.GetWindowRect(self.moe_win) # 200 16
         win32gui.SetForegroundWindow(self.moe_win)
-        self.moe_win_rect = win32gui.GetWindowRect(self.moe_win)
 
         return self
 

@@ -4,20 +4,20 @@ import win32gui
 import win32con
 import win32clipboard
 from layout.moe import Moe
-from source.DTINet import DTINet
+from source.Temp import Temp
 
 moe = Moe()
 moe.launch()
 
-dtinet = DTINet()
-for receptor in dtinet.receptor():
-    #moe.transform(dtinet.path, receptor, type='receptor', ignore_water=True)
-    for ligand in dtinet.ligand():
-        #moe.transform(dtinet.path, ligand, type='ligand')
+handler = Temp()
+for receptor in handler.receptor():
+    #moe.transform(handler.path, receptor, type='receptor', ignore_water=True)
+    for ligand in handler.ligand():
+        #moe.transform(handler.path, ligand, type='ligand')
 
-        # moe.import_file(dtinet.path, ligand)
+        # moe.import_file(handler.path, ligand)
         # time.sleep(1)
-        # moe.import_file(dtinet.path, receptor)
+        # moe.import_file(handler.path, receptor)
         # moe.dock()
 
         # moe.delete()
