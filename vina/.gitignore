@@ -1,0 +1,6 @@
+.DS_Store
+resource/Temp
+data/Temp
+*.mdb
+*.pdb
+*.pdbqt
