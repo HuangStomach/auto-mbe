@@ -4,3 +4,5 @@ data/Temp
 *.mdb
 *.pdb
 *.pdbqt
+output/*
+!output/auto*

@@ -1,13 +1,14 @@
+import os
 import numpy as np
 
-dti = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
-drugs = ['DB00050']
-
+drugs = np.loadtxt('./source/DTINet/durg.txt', dtype=str)
 proteins = np.loadtxt('./source/DTINet/protein.txt', dtype=str)
 for drug in drugs:
-    #exec('pythonsh ../../Utilities24/prepare_receptor4.py -r ./{}.pdb -A hydrogens -U waters -o ')
-    for i, flag in enumerate(dti):
-        print(proteins[i])
+    # 加氢报错那咋办呢
+    os.system('./pythonsh ./Utilities24/prepare_ligand4.py -l ./data/DTINet/drugs/{}.pdb -U waters -o ./output/{}.pdbqt'.format(drug, drug))
+    for protein in proteins:
+        print(protein)
+        os.system('./pythonsh ./Utilities24/prepare_receptor4.py -r ./data/DTINet/proteins/{}.pdb -U waters -o ./output/{}.pdbqt'.format(protein, protein))
 
 # handler = open("./data/Temp/4X0F.pdbqt", 'r')
 

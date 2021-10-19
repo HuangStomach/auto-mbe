@@ -19,10 +19,10 @@ import numpy as np
 
 proteins = np.loadtxt('./source/DTINet/protein.txt', dtype=str)
 for protein in proteins:
+    current_db = {}
     try:
         r = requests.get('https://www.ebi.ac.uk/proteins/api/proteins/{}'.format(protein))
         content = json.loads(r.text)
-        current_db = {}
     except Exception as e:
         print(protein, e)
         continue
