@@ -17,8 +17,13 @@ import numpy as np
 #     print(drug)
 #     time.sleep(1)
 
+ignore_flag = True
+break_point = 'Q92781'
 proteins = np.loadtxt('./source/DTINet/protein.txt', dtype=str)
 for protein in proteins:
+    if protein == break_point: ignore_flag = False
+    if ignore_flag: continue
+
     current_db = {}
     try:
         r = requests.get('https://www.ebi.ac.uk/proteins/api/proteins/{}'.format(protein))
@@ -49,9 +54,11 @@ for protein in proteins:
     if len(current_db) == 0: 
         print(protein, '啥也没有')
         continue
-    id = current_db['id']
+
     try:
+        id = current_db['id']
         request.urlretrieve('https://files.rcsb.org/download/{}.pdb'.format(id), './data/DTINet/proteins/{}.pdb'.format(protein))
     except Exception as e:
         print(protein, e)
+        continue
     print(protein, id, current_db['properties']['method'])
