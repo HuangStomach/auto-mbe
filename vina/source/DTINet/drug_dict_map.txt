@@ -1,1 +1,1 @@
-/Users/jipeng.huang/Projects/bioinformatics-dataset/DTINet/drug_dict_map.txt
+../../../../bioinformatics-dataset/DTINet/drug_dict_map.txt

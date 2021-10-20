@@ -1,1 +1,1 @@
-/Users/jipeng.huang/Projects/bioinformatics-dataset/DTINet/drug.txt
+../../../../bioinformatics-dataset/DTINet/drug.txt

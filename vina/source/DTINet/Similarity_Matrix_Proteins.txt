@@ -1,1 +1,1 @@
-/Users/jipeng.huang/Projects/bioinformatics-dataset/DTINet/Similarity_Matrix_Proteins.txt
+../../../../bioinformatics-dataset/DTINet/Similarity_Matrix_Proteins.txt

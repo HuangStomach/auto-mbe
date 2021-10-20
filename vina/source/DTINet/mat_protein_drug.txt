@@ -1,1 +1,1 @@
-/Users/jipeng.huang/Projects/bioinformatics-dataset/DTINet/mat_protein_drug.txt
+../../../../bioinformatics-dataset/DTINet/mat_protein_drug.txt

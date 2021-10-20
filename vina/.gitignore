@@ -5,4 +5,4 @@ data/Temp
 *.pdb
 *.pdbqt
 output/*
-!output/auto*
+!output/*.py
